@@ -4,6 +4,7 @@ let botonSuma = document.getElementById("botonSuma");
 let operacion = 0;
 let resultado = "";
 let botonBorrar = document.getElementById("botonBorrar");
+let botonFactorial = document.getElementById("botonFactorial");
 
 
 for (i = 0; i < botonesNumero.length; i++) {
@@ -25,5 +26,16 @@ botonIgual.onclick = () => {
     pantalla.innerHTML = resultado;
 }
 
-let numeroPantalla = "";
+botonFactorial.onclick = () => {
+    let numero = parseInt(pantalla.textContent);
+    if (numero === 0)
+        pantalla.innerHTML = 1;
+    else {
+        let res = 1;
+        for (let n = numero; n > 0; n--) {
+            res = res * n;
+        }
+        pantalla.innerHTML = res;
+    }
+}
 
