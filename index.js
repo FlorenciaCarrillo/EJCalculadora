@@ -5,6 +5,9 @@ let operacion = 0;
 let resultado = "";
 let botonBorrar = document.getElementById("botonBorrar");
 let botonFactorial = document.getElementById("botonFactorial");
+let botonPotencia2 = document.getElementById("botonPotencia2");
+let botonPotencia3 = document.getElementById("botonPotencia3");
+let botonPotenciaN = document.getElementById("botonPotenciaN");
 
 
 for (i = 0; i < botonesNumero.length; i++) {
@@ -21,13 +24,13 @@ botonBorrar.onclick = () => {
 }
 
 botonIgual.onclick = () => {
-    operacion = pantalla.textContent;
+    operacion = pantalla.textContent.replace("^", "**");
     resultado = eval(operacion); //eval recibe strings
     pantalla.innerHTML = resultado;
 }
 
 botonFactorial.onclick = () => {
-    let numero = parseInt(pantalla.textContent);
+    let numero = parseFloat(pantalla.textContent);
     if (numero === 0)
         pantalla.innerHTML = 1;
     else {
@@ -39,3 +42,18 @@ botonFactorial.onclick = () => {
     }
 }
 
+botonPotencia2.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    resultado = Math.pow(numero, 2);
+    pantalla.innerHTML = resultado;
+}
+
+botonPotencia3.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    resultado = Math.pow(numero, 3);
+    pantalla.innerHTML = resultado;
+}
+
+botonPotenciaN.onclick = () => {
+    pantalla.innerHTML += "^";
+}
