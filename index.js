@@ -16,6 +16,9 @@ let botonCos = document.getElementById("botonCos");
 let botonTg = document.getElementById("botonTg");
 let botonLog = document.getElementById("botonLog");
 let botonLn = document.getElementById("botonLn");
+let botonPorcentaje = document.getElementById("botonPorcentaje");
+let botonE = document.getElementById("botonE");
+let botonPi = document.getElementById("botonPi");
 
 
 for (i = 0; i < botonesNumero.length; i++) {
@@ -34,7 +37,9 @@ botonBorrar.onclick = () => {
 botonIgual.onclick = () => {
     operacion = pantalla.textContent
         .replace("^", "**")
-        .replace("√", "**1/");
+        .replace("√", "**1/")
+        .replace("π", "Math.PI")
+        .replace("e", "Math.E");
     resultado = eval(operacion); //eval recibe strings
     pantalla.innerHTML = resultado;
 }
@@ -120,4 +125,17 @@ botonLn.onclick = () => {
     pantalla.innerHTML = resultado;
 }
 
+botonPorcentaje.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    resultado = numero / 100;
+    pantalla.innerHTML = resultado;
+}
+
+botonE.onclick = () => {
+    pantalla.innerHTML += "e";
+}
+
+botonPi.onclick = () => {
+    pantalla.innerHTML += "π";
+}
 
