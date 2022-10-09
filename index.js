@@ -8,6 +8,9 @@ let botonFactorial = document.getElementById("botonFactorial");
 let botonPotencia2 = document.getElementById("botonPotencia2");
 let botonPotencia3 = document.getElementById("botonPotencia3");
 let botonPotenciaN = document.getElementById("botonPotenciaN");
+let botonRaiz2 = document.getElementById("botonRaiz2");
+let botonRaiz3 = document.getElementById("botonRaiz3");
+let botonRaizN = document.getElementById("botonRaizN");
 
 
 for (i = 0; i < botonesNumero.length; i++) {
@@ -24,7 +27,9 @@ botonBorrar.onclick = () => {
 }
 
 botonIgual.onclick = () => {
-    operacion = pantalla.textContent.replace("^", "**");
+    operacion = pantalla.textContent
+        .replace("^", "**")
+        .replace("√", "**1/");
     resultado = eval(operacion); //eval recibe strings
     pantalla.innerHTML = resultado;
 }
@@ -56,4 +61,23 @@ botonPotencia3.onclick = () => {
 
 botonPotenciaN.onclick = () => {
     pantalla.innerHTML += "^";
+}
+
+botonRaiz2.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    resultado = Math.sqrt(numero);
+    pantalla.innerHTML = resultado;
+}
+
+botonRaiz3.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    resultado = Math.cbrt(numero);
+    pantalla.innerHTML = resultado;
+}
+
+botonRaizN.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    let indice = prompt("Indice:");
+    resultado = Math.pow(numero, 1 / indice);
+    pantalla.innerHTML = resultado;
 }
