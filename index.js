@@ -11,6 +11,11 @@ let botonPotenciaN = document.getElementById("botonPotenciaN");
 let botonRaiz2 = document.getElementById("botonRaiz2");
 let botonRaiz3 = document.getElementById("botonRaiz3");
 let botonRaizN = document.getElementById("botonRaizN");
+let botonSin = document.getElementById("botonSin");
+let botonCos = document.getElementById("botonCos");
+let botonTg = document.getElementById("botonTg");
+let botonLog = document.getElementById("botonLog");
+let botonLn = document.getElementById("botonLn");
 
 
 for (i = 0; i < botonesNumero.length; i++) {
@@ -81,3 +86,38 @@ botonRaizN.onclick = () => {
     resultado = Math.pow(numero, 1 / indice);
     pantalla.innerHTML = resultado;
 }
+
+botonSin.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    let rad = (Math.PI / 180) * numero;
+    resultado = Math.sin(rad);
+    pantalla.innerHTML = resultado;
+}
+
+botonCos.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    let rad = (Math.PI / 180) * numero;
+    resultado = Math.cos(rad);
+    pantalla.innerHTML = resultado;
+}
+
+botonTg.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    let rad = (Math.PI / 180) * numero;
+    resultado = Math.tan(rad);
+    pantalla.innerHTML = resultado;
+}
+
+botonLog.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    resultado = Math.log10(numero);
+    pantalla.innerHTML = resultado;
+}
+
+botonLn.onclick = () => {
+    let numero = parseFloat(pantalla.textContent);
+    resultado = Math.log(numero);
+    pantalla.innerHTML = resultado;
+}
+
+
